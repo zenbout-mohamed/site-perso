@@ -16,19 +16,15 @@ export default function RootLayout({children}: {children: React.ReactNode}){
             <Link href ="/contact">Contact</Link>
           </nav>
         </header>
-        
 
+        <main className ="max-w-4xl mx-auto p-6">
+          {children}
+        </main>
 
-
-
-
-        </nav>
-
-
-
-
-
+        <footer className ="border-t text-center p-4 text-sm text-gray-500">
+          &copy; {new Date().getFullYear()} Mohamed - Tous droit réservés.
+        </footer>
       </body>
     </html> 
-  )
+  );
 }
