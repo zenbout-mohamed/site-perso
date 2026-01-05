@@ -1,30 +1,26 @@
 import "./globals.css";
-import { Inter} from "next/font/google";
-import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"]});
+export const metadata = {
+  title: "Mon Portfolio",
+  description: "Portfolio développeur web",
+};
 
-export default function RootLayout({children}: {children: React.ReactNode}){
-  return(
-    <html lang ="fr">
-      <body className ={inter.className}>
-        <header className ="border-b bg-white">
-          <nav className ="max-w-4xl mx-auto p-4 flex items-center gap-6">
-            <Link href ="/" className ="font-semibold">Accueil</Link>
-            <Link href ="/projects">Projets</Link>
-            <Link href ="/about">About</Link>
-            <Link href ="/contact">Contact</Link>
-          </nav>
-        </header>
-
-        <main className ="max-w-4xl mx-auto p-6">
-          {children}
-        </main>
-
-        <footer className ="border-t text-center p-4 text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Mohamed - Tous droit réservés.
-        </footer>
-      </body>
-    </html> 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="fr">
+        <body className="bg-gray-900 text-teal-300 min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1 container mx-auto px-6 py-10">
+            {children}
+            </main>
+            <Footer />
+        </body>
+        </html>
   );
 }
